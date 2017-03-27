@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>maven 常用命令</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+<table id="pageHeader">
+   <tr>
+      <td class="left" rowspan="3">
+         <a class="noHover" href="index.html" target="_parent">
+         <img src="Res/images/logo.gif" alt=""></a> 
+      </td>
+      <td class="right">
+<!-- BEGIN TOOLS UTILITIES--> 
+<div class="utilities">
+  <span class="command">
+    <a href="index.html" target="_parent">
+      <span class="label">Home</span>
+    </a>
+  </span>
+<span class="utilities_toc">
+|
+  <span class="command">
+    <a href="contents.htm" target="_parent">
+      <span class="label">Table of Contents</span>
+    </a>
+  </span>
+</span>
+<!-- BEGIN HEADER UTILITIES OVERVIEW SNIPPET --> 
+|
+  <span class="command">
+     <a href="map.htm" target="_parent">
+       <span class="label">Overview Map</span>
+     </a>
+  </span>
+<!-- END HEADER UTILITIES OVERVIEW SNIPPET --> 
+
+<!-- BEGIN HEADER UTILITIES LEGEND SNIPPET --> 
+|
+  <span class="command">
+    <a href="javascript:openPopup('legend.htm','Legend','scrollbars=yes,resizable=yes,left=20,top=20,width=240,height=450')"> 
+      <span class="label">Icon Legend</span>
+    </a>
+  </span>        
+<!-- END HEADER UTILITIES LEGEND SNIPPET --> 
+
+</div>
+<!-- END TOOLS UTILITIES--> 
+
+      </td>
+   </tr>
+   <tr>
+      <td class="right">
+        <div class="mapName">Maven</div>
+      </td>
+   </tr>
+   <tr>
+      <td class="right">
+        <div class="contactInformation">Your contact information&nbsp;&nbsp;<a href="mailto:info@company.com">info@company.com</a></div>
+      </td>
+   </tr>
+</table>
+<!-- END PAGE HEADER -->
+
+<!-- BEGIN PAGE BODY-->
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<table>
+  <tr>
+    <td class="outlineColumn">
+      <!-- Ensure minimum width of outline-->
+      <img class="emptyImage" src="Res/images/empty.gif" 
+           width="190" height="1" alt="">                                  
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree" style="padding: 5px;">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+    </td>
+    <td class="bodyColumn">
+<!-- END SIDE NAVIGATION WRAPPER-->
+
+<table id="pageBody">
+ <col class="main">
+ <col class="right">
+
+<!-- BEGIN BREADCRUMBS-->
+<tr id="breadcrumbsAndPageNavigation">
+  <td class="breadcrumbs" valign="top">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   2. maven 常用命令
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </td>
+  <td class="pageNavigation" valign="top">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="maven(4).html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="无标题.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+  </td>
+  <td class="right" valign="top">
+  </td>
+</tr>
+<!-- END BREADCRUMBS-->
+
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <div class="body">
+      <div class="topicDivider">
+      </div>
+    </div>
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题3"></a>
+          <span class=outlineNumberFirst>2. </span><span class=topicLineFirst>maven 常用命令</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"><div align="left"><b>&#21019;&#24314;java&#24037;&#31243;&#160;
+&#21033;&#29992; archetypeArtifactId
+&#27169;&#22411;&#65288;&#39592;&#26550;&#65289;</b></div>
+<div align="left"><b>&#160;mvn archetype:generate
+-DgroupId=&#20844;&#21496;&#21517;&#31216;
+-DartifactId=&#39033;&#30446;&#21517;
+-DarchetypeArtifactId=</b><font color=
+"#FF0000"><span><b>maven-archetype-quickstart</b></span></font><b>&#160;-DinteractiveMode=false</b></div>
+<div align="left">
+<b>&#21019;&#24314;javaweb&#24037;&#31243;</b></div>
+<div align="left"><b>mvn archetype:generate -DgroupId=cn.luxh.app
+-DartifactId=my-web-app -DarchetypeArtifactId=</b><font color=
+"#FF0000"><span><b>maven-archetype-webapp</b></span></font><b>&#160;-DinteractivMode=false</b></div>
+<div align="left"><b>&#160;</b></div>
+<div align="left"><b>&#21629;&#20196;&#35828;&#26126;</b></div>
+<div align="left"><b>&#160;&#12288;&#12288;mvn
+archetype:generate&#12288;&#12288;
+&#22266;&#23450;&#26684;&#24335;</b></div>
+<div align="left">
+<b>&#12288;&#12288;-DgroupId&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#160;&#160;&#160;&#160;&#160;
+&#20844;&#21496;&#21517;</b></div>
+<div align="left">
+<b>&#12288;&#12288;-DartifactId&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#160;&#160;
+&#39033;&#30446;&#21517;&#31216;</b></div>
+<div align="left">
+<b>&#12288;&#12288;-DarchetypeArtifactId&#12288;&#12288;&#160;
+&#25351;&#23450;ArchetypeId&#65292;maven-archetype-quickstart&#65292;&#21019;&#24314;&#19968;&#20010;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+Java
+Project&#65307;maven-archetype-webapp&#65292;&#21019;&#24314;&#19968;&#20010;Web
+Project</b></div>
+<div align="left">
+<b>&#12288;&#12288;-DinteractiveMode&#12288;&#12288;&#12288;&#12288;&#160;
+&#12288;&#26159;&#21542;&#20351;&#29992;&#20132;&#20114;&#27169;&#24335;</b></div>
+<div align="left">
+<b>-------------------------------------------------------------------------------------</b></div>
+<div align="left"><b>&#160;</b></div>
+<div align="left">
+<b>&#12288;&#32534;&#35793;&#28304;&#20195;&#30721;&#160; mvn
+compile</b></div>
+<div align="left"><b>&#160;&#160;
+&#28165;&#31354;&#160;&#160;&#160;&#160; mvn clean</b></div>
+<div align="left"><b>&#160;&#160;
+&#29983;&#20135;&#31449;&#28857;&#30446;&#24405;&#24182;&#25171;&#21253;&#160;
+mvn site-deploy</b></div>
+<div align="left"><b>&#160;
+&#23433;&#35013;&#24403;&#21069;&#24037;&#31243;&#30340;&#36755;&#20986;&#25991;&#20214;&#21040;&#26412;&#22320;&#20179;&#24211;&#160;&#160;
+mvn install</b></div>
+<div align="left"><b>&#160; &#25171;&#21253;&#160; mvn
+package</b></div>
+<div align="left"><b>&#160;
+&#20808;&#28165;&#38500;&#20877;&#25171;&#21253;&#160; mvn clean
+package</b></div>
+<div align="left"><b>&#160; &#25171;&#25104;jar&#21253;&#160; mvn
+jar:jar</b></div>
+<div align="left">
+<b>&#160;------------------------------------------------------------</b></div>
+<div align="left"><b>&#160;</b></div>
+<div align="left">&#160; &#20851;&#20110;pom.xml&#65306;</div>
+<div align="left">
+Maven&#24037;&#31243;&#32467;&#26500;&#21644;&#20869;&#23481;&#34987;&#23450;&#20041;&#22312;pom.xml&#20013;&#65292;&#20840;&#31216;&#21363;&#20026;project
+object moduel.</div>
+<div align="left">&#160;</div>
+<div align="left">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#32422;&#23450;&#20248;&#20110;&#37197;&#32622;&#65306;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+Maven&#20351;&#29992;&#32422;&#23450;&#32780;&#19981;&#26159;&#37197;&#32622;&#65292;&#24847;&#21619;&#30528;&#24320;&#21457;&#32773;&#19981;&#38656;&#35201;&#20877;&#33258;&#24049;&#21019;&#24314;&#26500;&#24314;&#36807;&#31243;&#12290;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#24403;&#21019;&#24314;Maven&#24037;&#31243;&#26102;&#65292;Maven&#20250;&#21019;&#24314;&#40664;&#35748;&#30340;&#24037;&#31243;&#32467;&#26500;&#65292;&#24320;&#21457;&#32773;&#21482;&#38656;&#35201;&#21512;&#29702;&#30340;&#25918;&#32622;&#37197;&#32622;&#25991;&#20214;&#32780;&#22312;pom.xml&#20013;&#26080;&#38656;&#20570;&#20219;&#20309;&#37197;&#32622;&#12290;</div>
+<div align="left">&#160;</div>
+<div align="left">&#160;<img src=
+"NotesImages/Topic3NotesImage88.gif" align="bottom" width="541"
+height="335" border="0" alt="graphic" /></div>
+<div align="left">&#160;</div></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+            <img src="Res/images/top_button.gif" alt=""> 
+          <a href="javascript:scroll(0,0)">
+             <span class="label">Top</span>
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!-- END TOP BUTTON -->
+
+</table>
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+    </td>
+  </tr>
+</table> 
+<!-- END SIDE NAVIGATION WRAPPER-->
+
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+<table id="pageFooter">
+   <tr>
+      <!-- reserved for image <td class="left" rowspan="2"></td>-->
+      <td class="center" rowspan="2">
+         <div class="footerText">Your footer text</div>
+      </td>
+      <td class="right">
+         <div class="hyperlink">
+            <span>   
+               <a href="http://www.mindjet.com/" target="_blank">Powered By Mindjet MindManager</a>
+            </span>
+         </div>
+      </td>
+   </tr>
+   <tr>
+      <td class="right">
+         <div class="lastUpdated">
+            <span>Last updated:</span>
+            <span>2017/3/26</span>
+         </div>
+      </td>
+   </tr>
+   <tr>
+     <td></td>
+   </tr>
+</table>
+<!---END FOOTER-->
+
+
+</body>
+</html>
+

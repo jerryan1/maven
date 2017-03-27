@@ -1,0 +1,1063 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>依赖，聚合，继承</title>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/shared.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxController.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/code/boxSettings.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_items.js"></script>
+   <script language="JavaScript" type="text/JavaScript" src="Res/tree/tree_tpl.js"></script>
+   <link href="Res/styles/shared.css" rel="stylesheet" type="text/css">
+   <link href="Res/styles/DynamicOutline.css" rel="stylesheet" type="text/css">
+</head>
+<body id="page" onload="init()">
+<!-- BEGIN PAGE HEADER -->
+<table id="pageHeader">
+   <tr>
+      <td class="left" rowspan="3">
+         <a class="noHover" href="index.html" target="_parent">
+         <img src="Res/images/logo.gif" alt=""></a> 
+      </td>
+      <td class="right">
+<!-- BEGIN TOOLS UTILITIES--> 
+<div class="utilities">
+  <span class="command">
+    <a href="index.html" target="_parent">
+      <span class="label">Home</span>
+    </a>
+  </span>
+<span class="utilities_toc">
+|
+  <span class="command">
+    <a href="contents.htm" target="_parent">
+      <span class="label">Table of Contents</span>
+    </a>
+  </span>
+</span>
+<!-- BEGIN HEADER UTILITIES OVERVIEW SNIPPET --> 
+|
+  <span class="command">
+     <a href="map.htm" target="_parent">
+       <span class="label">Overview Map</span>
+     </a>
+  </span>
+<!-- END HEADER UTILITIES OVERVIEW SNIPPET --> 
+
+<!-- BEGIN HEADER UTILITIES LEGEND SNIPPET --> 
+|
+  <span class="command">
+    <a href="javascript:openPopup('legend.htm','Legend','scrollbars=yes,resizable=yes,left=20,top=20,width=240,height=450')"> 
+      <span class="label">Icon Legend</span>
+    </a>
+  </span>        
+<!-- END HEADER UTILITIES LEGEND SNIPPET --> 
+
+</div>
+<!-- END TOOLS UTILITIES--> 
+
+      </td>
+   </tr>
+   <tr>
+      <td class="right">
+        <div class="mapName">Maven</div>
+      </td>
+   </tr>
+   <tr>
+      <td class="right">
+        <div class="contactInformation">Your contact information&nbsp;&nbsp;<a href="mailto:info@company.com">info@company.com</a></div>
+      </td>
+   </tr>
+</table>
+<!-- END PAGE HEADER -->
+
+<!-- BEGIN PAGE BODY-->
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+<table>
+  <tr>
+    <td class="outlineColumn">
+      <!-- Ensure minimum width of outline-->
+      <img class="emptyImage" src="Res/images/empty.gif" 
+           width="190" height="1" alt="">                                  
+<!-- DYNAMIC OUTLINE - START -->
+  <div class="dynamicOutline">
+	<div class="tree" style="padding: 5px;">
+		<script language="JavaScript" type="text/JavaScript">new tree (TREE_ITEMS, TREE_TPL);</script>
+	</div>
+  </div>
+<!-- DYNAMIC OUTLINE - END -->
+
+    </td>
+    <td class="bodyColumn">
+<!-- END SIDE NAVIGATION WRAPPER-->
+
+<table id="pageBody">
+ <col class="main">
+ <col class="right">
+
+<!-- BEGIN BREADCRUMBS-->
+<tr id="breadcrumbsAndPageNavigation">
+  <td class="breadcrumbs" valign="top">     
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="index.html">Home</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS ITEM-->
+<span class="breadcrumb">
+   <a href="eclipsemaven.html">3. eclipse maven插件</a> 
+   <span class="separator">&gt;</span>
+</span>
+<!-- END NAVIGATION BREADCRUMBS ITEM-->
+<!-- BEGIN NAVIGATION BREADCRUMBS HERE-->
+<span class="breadcrumb">
+   3.5 依赖，聚合，继承
+</span>
+<!-- END NAVIGATION BREADCRUMBS HERE-->
+
+  </td>
+  <td class="pageNavigation" valign="top">
+<!-- START PAGE NAVIGATION NEXT IN SEQUENCE IMAGES -->
+<span class="commands">
+    <span class="command">
+        <img src="Res/images/previous_button.gif" alt=""> <a href="maven(9).html">
+        <span class="label">Previous</span></a>
+    </span>
+&nbsp;&nbsp;
+    <span class="command">
+        <a href="pom.xml.html">
+        <span class="label">Next</span></a> <img src="Res/images/next_button.gif" alt="">
+    </span>
+</span>
+<!-- END PAGE NAVIGATION NEXT IN SEQUENCE IMAGES  -->
+
+  </td>
+  <td class="right" valign="top">
+  </td>
+</tr>
+<!-- END BREADCRUMBS-->
+
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <div class="body">
+      <div class="topicDivider">
+      </div>
+    </div>
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题19"></a>
+          <span class=outlineNumberFirst>3.5 </span><span class=topicLineFirst>依赖，聚合，继承</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"><div align="left"><font size="4"><span style=
+" font-size:16pt">&#20851;&#31995;&#31034;&#24847;&#22270;&#160;</span></font><img src="NotesImages/Topic19NotesImage8.jpg"
+     align="bottom" width="687" height="318" border="0" alt=
+     "graphic" /></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#19968;&#12289;&#20381;&#36182;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#25105;&#20204;&#39033;&#30446;&#20013;&#20381;&#36182;&#30340;jar&#21253;&#21487;&#20197;&#36890;&#36807;&#20381;&#36182;&#30340;&#26041;&#24335;(dependencies&#20803;&#32032;&#19979;&#28155;&#21152;dependency&#23376;&#20803;&#32032;)&#24341;&#20837;&#12290;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></font></div>
+<div align="left"><img src="NotesImages/Topic19NotesImage27.jpg"
+align="bottom" width="272" height="168" border="0" alt=
+"graphic" /></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">1.&#20381;&#36182;&#33539;&#22260;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#36890;&#36807;&#25511;&#21046;&#20381;&#36182;&#30340;&#33539;&#22260;&#65292;&#21487;&#20197;&#25351;&#23450;&#35813;&#20381;&#36182;&#22312;&#20160;&#20040;&#38454;&#27573;&#26377;&#25928;&#12290;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></font></div>
+<div align="left"><img src="NotesImages/Topic19NotesImage40.jpg"
+align="bottom" width="305" height="198" border="0" alt=
+"graphic" /></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">maven&#30340;&#20960;&#31181;&#20381;&#36182;&#33539;&#22260;(&lt;scope&gt;&lt;/scope&gt;)</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><img src="NotesImages/Topic19NotesImage43.jpg"
+align="bottom" width="257" height="196" border="0" alt=
+"graphic" /></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">2.&#20381;&#36182;&#20855;&#26377;&#20256;&#36882;&#24615;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">2.1&#20381;&#36182;&#20256;&#36882;&#30340;&#35268;&#21017;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#35268;&#21017;-&#32423;&#21035;&#19968;&#26679;&#65292;&#23601;&#20808;&#29992;&#31532;&#19968;&#20010;&#65292;&#32423;&#21035;&#19981;&#19968;&#26679;&#65292;&#23601;&#29992;&#32423;&#21035;&#26368;&#23569;&#30340;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#35299;&#37322;&#65306;&#32423;&#21035;&#65288;&#20381;&#36182;&#30340;&#23618;&#27425;&#65289;&#19968;&#26679;&#30340;&#65292;&#23601;&#25353;&#29031;&#39034;&#24207;&#65292;&#20381;&#36182;&#31532;&#19968;&#20010;&#65288;&#23618;&#27425;&#20026;0&#65289;&#65307;&#22914;&#26524;&#20986;&#29616;&#23618;&#27425;&#65288;&#23618;&#27425;&gt;0&#65289;&#65292;&#23601;&#20808;&#20381;&#36182;&#23618;&#27425;&#26368;&#23569;&#30340;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">2.2&#21435;&#38500;&#20381;&#36182;&#30340;&#20004;&#31181;&#26041;&#24335;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#36873;&#25321;&#24615;&#20381;&#36182;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#22312;&#20381;&#36182;&#20013;&#29992;&lt;optional&gt;&#30452;&#25509;&#21435;&#38500;&#36825;&#31181;&#20381;&#36182;&#20256;&#36882;&#30340;&#29305;&#24615;&#65292;&#20063;&#23601;&#26159;&#35828;&#65292;&#22914;&#26524;&#21035;&#30340;&#39033;&#30446;&#24341;&#29992;&#35774;&#32622;&#20102;&#27492;&#20381;&#36182;&#30340;&#39033;&#30446;&#65292;&#36825;&#20010;commons-longging&#19981;&#20250;&#34987;&#20381;&#36182;&#21040;&#12290;&#20363;&#22914;&#22312;&#39033;&#30446;A&#20013;&#37197;&#32622;commons-logging&#30340;&#20381;&#36182;&#65292;&#22914;&#26524;&#39033;&#30446;B&#20381;&#36182;&#39033;&#30446;A&#65292;&#37027;&#20040;&#65292;&#27492;&#26102;&#39033;&#30446;B&#20013;&#19981;&#20250;&#20381;&#36182;commons-logging&#20102;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">[html] view plain copy</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">print?</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160; &lt;!--
+&#25490;&#38500;&#20381;&#36182;
+--&gt;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;
+&lt;dependency&gt;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;
+&lt;groupId&gt;commons-logging&lt;/groupId&gt;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;
+&lt;artifactId&gt;commons-logging&lt;/artifactId&gt;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;
+&lt;version&gt;1.1.1&lt;/version&gt;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;
+&lt;optional&gt;true&lt;optional&gt;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;
+&lt;/dependency&gt;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#25490;&#38500;&#20381;&#36182;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#22914;&#26524;&#31532;&#19977;&#26041;&#30340;jar&#21253;&#27809;&#26377;&#29992;&lt;optional&gt;&#21435;&#38500;&#20381;&#36182;&#30340;&#20256;&#36882;&#24615;&#65292;&#37027;&#20040;&#25105;&#20204;&#21487;&#20197;&#22312;&#24403;&#21069;&#30340;&#39033;&#30446;&#20013;&#20351;&#29992;&lt;exclusion&gt;&#20803;&#32032;&#22768;&#26126;&#25490;&#38500;&#20381;&#36182;&#12290;&#20363;&#22914;&#65292;&#39033;&#30446;A&#20013;&#37197;&#32622;&#20102;spring-core&#30340;&#20381;&#36182;&#65292;&#22914;&#26524;&#39033;&#30446;B&#38656;&#35201;&#24341;&#29992;&#39033;&#30446;A&#65292;&#20294;&#26159;&#21516;&#26102;&#21448;&#19981;&#38656;&#35201;commons-logging&#30340;&#21253;&#65292;&#36825;&#20010;&#26102;&#20505;&#20351;&#29992;&lt;exclusion&gt;&#20803;&#32032;&#25490;&#38500;&#21363;&#21487;&#65292;&#36825;&#31181;&#29992;&#27861;&#21487;&#20197;&#21051;&#35299;&#20915;&#21253;&#29256;&#26412;&#20914;&#31361;&#30340;&#38382;&#39064;&#12290;</span></font></div>
+<div align="left">&#160;</div>
+<div align="left">&#160;&#160;&#160;&#160;
+&lt;dependency&gt;&#160;&#160;&#160;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;groupId&gt;org.springframework&lt;/groupId&gt;&#160;&#160;&#160;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;artifactId&gt;spring-core&lt;/artifactId&gt;&#160;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;exclusions&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;exclusion&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;groupId&gt;commons-logging&lt;/groupId&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;artifactId&gt;commons-logging&lt;/artifactId&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;/exclusion&gt;&#160;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;/exclusions&gt;&#160;&#160;&#160;&#160;&#160;</div>
+<div align="left">&#160;&#160;&#160;
+&lt;/dependency&gt;&#160;&#160;</div>
+<div align="left">&#160;</div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#20108;&#12289;&#32858;&#21512;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#19968;&#20010;&#39033;&#30446;&#24448;&#24448;&#30001;&#22810;&#20010;&#27169;&#22359;&#26500;&#25104;&#30340;&#65292;&#22312;&#36827;&#34892;&#26500;&#24314;&#26102;&#65292;&#38024;&#23545;&#27599;&#20010;&#27169;&#22359;&#37117;&#36827;&#34892;&#26500;&#24314;&#21629;&#20196;&#26159;&#19968;&#20214;&#38750;&#24120;&#32321;&#29712;&#21448;&#23481;&#26131;&#20986;&#38169;&#30340;&#20107;&#24773;&#65292;&#25152;&#20197;Maven&#30340;&#32858;&#21512;&#21151;&#33021;&#33021;&#22815;&#26367;&#25105;&#20204;&#23436;&#25104;&#36827;&#34892;&#19968;&#27425;&#26500;&#24314;&#21629;&#20196;&#23436;&#25104;&#20840;&#37096;&#27169;&#22359;&#30340;&#26500;&#24314;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;Maven&#30340;&#32858;&#21512;&#21151;&#33021;&#21487;&#20197;&#36890;&#36807;&#19968;&#20010;&#29238;&#27169;&#22359;&#23558;&#25152;&#26377;&#30340;&#35201;&#26500;&#24314;&#27169;&#22359;&#25972;&#21512;&#36215;&#26469;&#65292;&#23558;&#29238;&#27169;&#22359;&#30340;&#25171;&#21253;&#31867;&#22411;&#22768;&#26126;&#20026;POM&#65292;&#36890;&#36807;&lt;modules&gt;&#23558;&#21508;&#27169;&#22359;&#38598;&#20013;&#21040;&#29238;POM&#20013;&#12290;&#160;</span></font></div>
+<div align="left">&#160;</div>
+<div align="left">&#160;&#160;&#160;
+&lt;modules&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;module&gt;user-core&lt;/module&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;module&gt;user-log&lt;/module&gt;&#160;&#160;</div>
+<div align="left">&#160;&#160;&#160;&#160;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;module&gt;user-service&lt;/module&gt;&#160;&#160;</div>
+<div align="left">&#160;&#160;&#160;&#160;&#160;&#160;</div>
+<div align="left">&#160;&#160;&#160;
+&lt;/modules&gt;&#160;&#160;</div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&#21407;&#29702;&#65306;&#29238;&#31867;&#22411;&#30340;&#27169;&#22359;&#65292;&#19981;&#38656;&#35201;&#26377;&#28304;&#20195;&#30721;&#21644;&#36164;&#28304;&#25991;&#20214;&#65292;&#20063;&#23601;&#26159;&#35828;&#65292;&#27809;&#26377;
+src/main/Java &#21644; src/test/java
+&#30446;&#24405;&#12290;Maven&#20250;&#39318;&#20808;&#35299;&#26512;&#32858;&#21512;&#27169;&#22359;&#30340;
+POM
+&#25991;&#20214;&#65292;&#20998;&#26512;&#35201;&#26500;&#24314;&#30340;&#27169;&#22359;&#65292;&#24182;&#36890;&#36807;&#21508;&#27169;&#22359;&#30340;&#20381;&#36182;&#20851;&#31995;&#35745;&#31639;&#20986;&#27169;&#22359;&#30340;&#25191;&#34892;&#39034;&#24207;&#65292;&#26681;&#25454;&#36825;&#20010;&#28508;&#22312;&#30340;&#20851;&#31995;&#20381;&#27425;&#26500;&#24314;&#27169;&#22359;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#19977;&#12289;&#32487;&#25215;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+Maven&#20013;&#32487;&#25215;&#30340;&#27010;&#24565;&#19982;&#38754;&#21521;&#23545;&#35937;&#30340;&#32487;&#25215;&#27010;&#24565;&#26159;&#19968;&#33268;&#30340;&#65292;&#36890;&#36807;&#32487;&#25215;&#28040;&#38500;&#37325;&#22797;&#32534;&#30721;&#30340;&#34892;&#20026;&#12290;&#22312;&#36825;&#37324;&#65292;&#25105;&#20204;&#20063;&#21487;&#20197;&#29992;&#19968;&#20010;&#29238;&#27169;&#22359;&#26469;&#23436;&#25104;&#29238;&#27169;&#22359;&#19982;&#23376;&#27169;&#22359;&#20849;&#29992;&#20381;&#36182;&#30340;&#32487;&#25215;&#20851;&#31995;&#12290;&#29238;&#27169;&#22359;&#30340;POM&#25991;&#20214;&#22768;&#26126;&#19982;&#24179;&#24120;&#19968;&#26679;&#65292;&#25552;&#21462;&#20844;&#20849;&#22320;&#26041;&#65292;&#23376;&#27169;&#22359;&#38656;&#35201;&#32487;&#25215;&#29238;&#27169;&#22359;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题20"></a>
+          <span class=outlineNumber>3.5.1 </span><span class=topicLine>依赖</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"><div align="left"><font size="4"><span style=
+" font-size:16pt">&#39033;&#30446;&#20013;&#24341;&#20837;&#30340;jar&#21253;(dependencies&#20803;&#32032;&#19979;&#28155;&#21152;dependency&#23376;&#20803;&#32032;)&#25105;&#20204;&#31216;&#20316;&#20381;&#36182;&#12290;</span></font></div></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题21"></a>
+          <span class=outlineNumber></span><span class=topicLine>依赖范围</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"><div align="left"><font size="4"><span style=
+" font-size:14pt">Maven&#30340;&#20381;&#36182;&#33539;&#22260;&#23601;&#26159;&#29992;&#26469;&#25511;&#21046;&#19982;&#32534;&#35793;&#12289;&#27979;&#35797;&#12289;&#36816;&#34892;&#19977;&#31181;classpath&#30340;&#20851;&#31995;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">Maven&#26377;&#20197;&#19979;&#20960;&#31181;&#20381;&#36182;&#33539;&#22260;&#65306;</span></font></div>
+<div align="left"><font color="#FF0000" size="4"><span style=
+" font-size:14pt">1.compile
+&#30340;&#33539;&#22260;</span></font></div>
+<div align="left"><font color="#FF0000" size="4"><span style=
+" font-size:14pt">&#24403;&#20381;&#36182;&#30340;scope&#20026;compile&#30340;&#26102;&#20505;,&#37027;&#20040;&#24403;&#21069;&#36825;&#20010;&#20381;&#36182;&#30340;&#21253;,&#20250;&#22312;&#32534;&#35793;&#30340;&#26102;&#20505;&#23558;&#36825;&#20010;&#20381;&#36182;&#21152;&#20837;&#36827;&#26469;&#65292;&#24182;&#19988;&#22312;&#25171;&#21253;&#65288;mvn
+package&#65289;&#30340;&#26102;&#20505;&#20063;&#20250;&#23558;&#36825;&#20010;&#20381;&#36182;&#21152;&#20837;&#36827;&#21435;</span></font></div>
+<div align="left"><font color="#FF0000" size="4"><span style=
+" font-size:14pt">&#24847;&#24605;&#23601;&#26159;&#65306;&#32534;&#35793;&#33539;&#22260;&#26377;&#25928;&#65292;&#22312;&#32534;&#35793;&#19982;&#25171;&#21253;&#26102;&#37117;&#20250;&#23384;&#20648;&#36827;&#21435;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">2.provided&#30340;&#33539;&#22260;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">&#24403;&#20381;&#36182;&#30340;scope&#20026;provided&#30340;&#26102;&#20505;&#65292;&#22312;&#32534;&#35793;&#21644;&#27979;&#35797;&#30340;&#26102;&#20505;&#26377;&#25928;&#65292;&#22312;&#25191;&#34892;&#65288;mvn
+package&#65289;&#36827;&#34892;&#25171;&#21253;&#25104;war&#21253;&#30340;&#26102;&#20505;&#19981;&#20250;&#21152;&#20837;&#65292;&#27604;&#22914;&#65306;servlet-api&#65292;&#22240;&#20026;servlet-api&#65292;tomcat&#31561;web&#26381;&#21153;&#22120;&#20013;&#24050;&#32463;&#23384;&#22312;&#65292;&#22914;&#26524;&#22312;&#25171;&#21253;&#36827;&#21435;&#65292;&#37027;&#20040;&#21253;&#20043;&#38388;&#23601;&#20250;&#20914;&#31361;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">3.test&#30340;&#33539;&#22260;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">&#24403;&#20381;&#36182;&#30340;scope&#20026;test&#30340;&#26102;&#20505;&#65292;&#25351;&#30340;&#30340;&#26159;&#22312;&#27979;&#35797;&#33539;&#22260;&#26377;&#25928;&#65292;&#22312;&#32534;&#35793;&#19982;&#25171;&#21253;&#30340;&#26102;&#20505;&#37117;&#19981;&#20250;&#20351;&#29992;&#36825;&#20010;&#20381;&#36182;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">4.runtime&#30340;&#33539;&#22260;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">&#24403;&#20381;&#36182;&#30340;scope&#20026;runtime&#30340;&#26102;&#20505;&#65292;&#22312;&#36816;&#34892;&#30340;&#26102;&#20505;&#25165;&#20250;&#20381;&#36182;&#65292;&#22312;&#32534;&#35793;&#30340;&#26102;&#20505;&#19981;&#20250;&#20381;&#36182;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">5.system
+&#65288;&#31995;&#32479;&#33539;&#22260;&#65289;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">system&#33539;&#22260;&#20381;&#36182;&#19982;provided
+&#31867;&#20284;&#65292;&#20294;&#26159;&#20320;&#24517;&#39035;&#26174;&#24335;&#30340;&#25552;&#20379;&#19968;&#20010;&#23545;&#20110;&#26412;&#22320;&#31995;&#32479;&#20013;JAR
+&#25991;&#20214;&#30340;&#36335;&#24452;&#12290;&#36825;&#20040;&#20570;&#26159;&#20026;&#20102;&#20801;&#35768;&#22522;&#20110;&#26412;&#22320;&#23545;&#35937;&#32534;&#35793;&#65292;&#32780;&#36825;&#20123;&#23545;&#35937;&#26159;&#31995;&#32479;&#31867;&#24211;&#30340;&#19968;&#37096;&#20998;&#12290;&#36825;&#26679;&#30340;&#26500;&#20214;&#24212;&#35813;&#26159;&#19968;&#30452;&#21487;&#29992;&#30340;&#65292;Maven
+&#20063;&#19981;&#20250;&#22312;&#20179;&#24211;&#20013;&#21435;&#23547;&#25214;&#23427;&#12290;&#22914;&#26524;&#20320;&#23558;&#19968;&#20010;&#20381;&#36182;&#33539;&#22260;&#35774;&#32622;&#25104;&#31995;&#32479;&#33539;&#22260;&#65292;&#20320;&#24517;&#39035;&#21516;&#26102;&#25552;&#20379;&#19968;&#20010;
+systemPath
+&#20803;&#32032;&#12290;&#27880;&#24847;&#35813;&#33539;&#22260;&#26159;&#19981;&#25512;&#33616;&#20351;&#29992;&#30340;&#65288;&#20320;&#24212;&#35813;&#19968;&#30452;&#23613;&#37327;&#21435;&#20174;&#20844;&#20849;&#25110;&#23450;&#21046;&#30340;
+Maven
+&#20179;&#24211;&#20013;&#24341;&#29992;&#20381;&#36182;&#65289;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">&#27880;&#65306;&#22312;&#40664;&#35748;&#30340;&#24773;&#20917;&#19979;scope&#30340;&#33539;&#22260;&#26159;compile</span></font></div></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题22"></a>
+          <span class=outlineNumber></span><span class=topicLine>传递性</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题23"></a>
+          <span class=outlineNumber></span><span class=topicLine>规则</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"><div align="left"><font size="4"><span style=
+" font-size:14pt">1&#12289;&#36335;&#24452;&#26368;&#36817;&#32773;&#20248;&#20808;&#65292;c-&gt;b-&gt;a&#160;
+c&#20381;&#36182;b,b&#20381;&#36182;a,c&#20250;&#20248;&#20808;&#29992;b&#30340;jar&#21253;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:14pt">2&#12289;&#36335;&#24452;&#30456;&#21516;&#37197;&#32622;&#26368;&#21069;&#32773;&#20248;&#20808;&#65292;c-&gt;b,c-&gt;a,c&#20381;&#36182;b,c&#20063;&#20381;&#36182;a,&#24517;&#39035;&#35201;&#30475;b&#12289;a&#22312;c&#20013;&#21738;&#20010;&#20808;&#22768;&#26126;&#65292;&#20248;&#20808;&#20351;&#29992;&#20808;&#22768;&#26126;&#30340;jar&#21253;&#12290;</span></font></div></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题24"></a>
+          <span class=outlineNumber></span><span class=topicLine>去除依赖</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题25"></a>
+          <span class=outlineNumber></span><span class=topicLine>选择性依赖&lt;optional/&gt;</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"><div align="left"><font size="4"><span style=
+" font-size:16pt">&#36873;&#25321;&#24615;&#20381;&#36182;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#22312;&#20381;&#36182;&#20013;&#29992;&lt;optional&gt;&#30452;&#25509;&#21435;&#38500;&#36825;&#31181;&#20381;&#36182;&#20256;&#36882;&#30340;&#29305;&#24615;&#65292;&#20063;&#23601;&#26159;&#35828;&#65292;&#22914;&#26524;&#21035;&#30340;&#39033;&#30446;&#24341;&#29992;&#35774;&#32622;&#20102;&#27492;&#20381;&#36182;&#30340;&#39033;&#30446;&#65292;&#36825;&#20010;commons-logging&#19981;&#20250;&#34987;&#20381;&#36182;&#21040;&#12290;&#20363;&#22914;&#22312;&#39033;&#30446;A&#20013;&#37197;&#32622;commons-logging&#30340;&#20381;&#36182;&#65292;&#22914;&#26524;&#39033;&#30446;B&#20381;&#36182;&#39033;&#30446;A&#65292;&#37027;&#20040;&#65292;&#27492;&#26102;&#39033;&#30446;B&#20013;&#19981;&#20250;&#20381;&#36182;commons-logging&#20102;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#160;&#160; &lt;!--
+&#25490;&#38500;&#20381;&#36182;
+--&gt;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&lt;dependency&gt;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;groupId&gt;commons-logging&lt;/groupId&gt;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;artifactId&gt;commons-logging&lt;/artifactId&gt;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&lt;version&gt;1.1.1&lt;/version&gt;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&lt;optional&gt;true&lt;/optional&gt;&#160;&#160;&#160;&#160;&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&lt;/dependency&gt;&#160;&#160;</span></font></div></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题26"></a>
+          <span class=outlineNumber></span><span class=topicLine>排除依赖&lt;exclusion/&gt;</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"><div align="left"><font size="4"><span style=
+" font-size:16pt">&#25490;&#38500;&#20381;&#36182;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#22914;&#26524;&#31532;&#19977;&#26041;&#30340;jar&#21253;&#27809;&#26377;&#29992;&lt;optional&gt;&#21435;&#38500;&#20381;&#36182;&#30340;&#20256;&#36882;&#24615;&#65292;&#37027;&#20040;&#25105;&#20204;&#21487;&#20197;&#22312;&#24403;&#21069;&#30340;&#39033;&#30446;&#20013;&#20351;&#29992;&lt;exclusion&gt;&#20803;&#32032;&#22768;&#26126;&#25490;&#38500;&#20381;&#36182;&#12290;&#20363;&#22914;&#65292;&#39033;&#30446;A&#20013;&#37197;&#32622;&#20102;spring-core&#30340;&#20381;&#36182;&#65292;&#22914;&#26524;&#39033;&#30446;B&#38656;&#35201;&#24341;&#29992;&#39033;&#30446;A&#65292;&#20294;&#26159;&#21516;&#26102;&#21448;&#19981;&#38656;&#35201;commons-logging&#30340;&#21253;&#65292;&#36825;&#20010;&#26102;&#20505;&#20351;&#29992;&lt;exclusion&gt;&#20803;&#32032;&#25490;&#38500;&#21363;&#21487;&#65292;&#36825;&#31181;&#29992;&#27861;&#21487;&#20197;&#21051;&#35299;&#20915;&#21253;&#29256;&#26412;&#20914;&#31361;&#30340;&#38382;&#39064;&#12290;</span></font></div>
+<div align="left">&#160;&#160;&#160;&#160;
+&lt;dependency&gt;&#160;&#160;&#160;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;groupId&gt;org.springframework&lt;/groupId&gt;&#160;&#160;&#160;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;artifactId&gt;spring-core&lt;/artifactId&gt;&#160;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;exclusions&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;exclusion&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;groupId&gt;commons-logging&lt;/groupId&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;artifactId&gt;commons-logging&lt;/artifactId&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;/exclusion&gt;&#160;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;/exclusions&gt;&#160;&#160;&#160;&#160;&#160;</div>
+<div align="left">&#160;&#160;&#160;
+&lt;/dependency&gt;&#160;</div></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题27"></a>
+          <span class=outlineNumber>3.5.2 </span><span class=topicLine>聚合</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"><div align="left"><font size="4"><span style=
+" font-size:16pt">&#19968;&#20010;&#39033;&#30446;&#24448;&#24448;&#30001;&#22810;&#20010;&#27169;&#22359;&#26500;&#25104;&#30340;&#65292;&#22312;&#36827;&#34892;&#26500;&#24314;&#26102;&#65292;&#38024;&#23545;&#27599;&#20010;&#27169;&#22359;&#37117;&#36827;&#34892;&#26500;&#24314;&#21629;&#20196;&#26159;&#19968;&#20214;&#38750;&#24120;&#32321;&#29712;&#21448;&#23481;&#26131;&#20986;&#38169;&#30340;&#20107;&#24773;&#65292;&#25152;&#20197;Maven&#30340;&#32858;&#21512;&#21151;&#33021;&#33021;&#22815;&#26367;&#25105;&#20204;&#23436;&#25104;&#36827;&#34892;&#19968;&#27425;&#26500;&#24314;&#21629;&#20196;&#23436;&#25104;&#20840;&#37096;&#27169;&#22359;&#30340;&#26500;&#24314;&#12290;</span></font></div>
+<div align="left">&#160;</div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;Maven&#30340;&#32858;&#21512;&#21151;&#33021;&#21487;&#20197;&#36890;&#36807;&#19968;&#20010;&#29238;&#27169;&#22359;&#23558;&#25152;&#26377;&#30340;&#35201;&#26500;&#24314;&#27169;&#22359;&#25972;&#21512;&#36215;&#26469;&#65292;&#23558;&#29238;&#27169;&#22359;&#30340;&#25171;&#21253;&#31867;&#22411;&#22768;&#26126;&#20026;POM&#65292;&#36890;&#36807;&lt;modules&gt;&#23558;&#21508;&#27169;&#22359;&#38598;&#20013;&#21040;&#29238;POM&#20013;&#12290;&#160;</span></font></div>
+<div align="left">&#160;&#160;&#160;
+&lt;modules&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;module&gt;user-core&lt;/module&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;module&gt;user-log&lt;/module&gt;&#160;&#160;</div>
+<div align="left">
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+&lt;module&gt;user-service&lt;/module&gt;&#160;&#160;</div>
+<div align="left">&#160;&#160;&#160;
+&lt;/modules&gt;&#160;&#160;</div></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题28"></a>
+          <span class=outlineNumber></span><span class=topicLine>通过一个父模块把所有子模块整合到一起</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"></div>
+
+
+
+
+
+<!--START RELATED-->
+<div class="relatedSection">
+<!--START ONE RELATED SECIONT -->
+<div class="oneRelatedSection">
+  <div class="relatedSectionHeader">See related topics and documents</div>
+  <div class="relatedSectionBody">
+      <!--BEGIN SNIPPET RELATIONSHIP LINKED CALLOUT PAGE HYPERLINK -->
+<div class="relatedItem">
+   <span class="relatedItemBullet">
+      <img src="Res/images/arrow.gif" alt="">
+   </span>
+   <a class="topicHyperlink"
+      href="无标题(5).html"
+      target="">子模块继承父模块</a>
+   <a class="topicHyperlink"
+      href="index(2).html"
+      target="">具有关联关系</a>
+</div>
+<!--END SNIPPET RELATIONSHIP LINKED CALLOUT PAGE HYPERLINK -->
+
+  </div>
+</div>
+<!--END ONE RELATED SECIONT-->
+
+
+</div>
+<!--END RELATED-->
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题29"></a>
+          <span class=outlineNumber></span><span class=topicLine>父模块的打包类型设置为POM</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题30"></a>
+          <span class=outlineNumber>3.5.3 </span><span class=topicLine>继承</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"><div align="left"><font size="4"><span style=
+" font-size:16pt">Maven&#20013;&#32487;&#25215;&#30340;&#27010;&#24565;&#19982;&#38754;&#21521;&#23545;&#35937;&#30340;&#32487;&#25215;&#27010;&#24565;&#26159;&#19968;&#33268;&#30340;&#65292;&#36890;&#36807;&#32487;&#25215;&#28040;&#38500;&#37325;&#22797;&#32534;&#30721;&#30340;&#34892;&#20026;&#12290;&#22312;&#36825;&#37324;&#65292;&#25105;&#20204;&#20063;&#21487;&#20197;&#29992;&#19968;&#20010;&#29238;&#27169;&#22359;&#26469;&#23436;&#25104;&#29238;&#27169;&#22359;&#19982;&#23376;&#27169;&#22359;&#20849;&#29992;&#20381;&#36182;&#30340;&#32487;&#25215;&#20851;&#31995;&#12290;&#29238;&#27169;&#22359;&#30340;POM&#25991;&#20214;&#22768;&#26126;&#19982;&#24179;&#24120;&#19968;&#26679;&#65292;&#25552;&#21462;&#20844;&#20849;&#22320;&#26041;&#65292;&#23376;&#27169;&#22359;&#38656;&#35201;&#32487;&#25215;&#29238;&#27169;&#22359;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;&#20570;&#27861;:&#23376;&#27169;&#22359;&#21152;&#20837;parent&#26631;&#31614;&#36827;&#34892;&#32487;&#25215;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#27880;&#24847;&#65306;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">1&#12289;&#23376;&#27169;&#22359;&#27809;&#26377;&#22768;&#26126;groupId&#21644;version,
+&#36825;&#20004;&#20010;&#23646;&#24615;&#32487;&#25215;&#33267;&#29238;&#27169;&#22359;&#12290;&#20294;&#22914;&#26524;&#23376;&#27169;&#22359;&#26377;&#19981;&#21516;&#19982;&#29238;&#27169;&#22359;&#30340;
+groupId&#12289;version
+&#65292;&#20063;&#21487;&#25351;&#23450;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">2&#12289;&#19981;&#24212;&#35813;&#32487;&#25215;artifactId,&#22914;&#26524;groupId
+&#65292;version&#65292;artifactId
+&#23436;&#20840;&#32487;&#25215;&#30340;&#35805;&#20250;&#36896;&#25104;&#22352;&#26631;&#20914;&#31361;&#65307;&#21478;&#22806;&#21363;&#20351;&#20351;&#29992;&#19981;&#21516;&#30340;
+groupId&#25110;version&#65292;&#21516;&#26679;&#30340;
+artifactId&#20063;&#23481;&#26131;&#20135;&#29983;&#28151;&#28102;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">3&#12289;&#20351;&#29992;&#32487;&#25215;&#21518;
+parent&#20063;&#24517;&#39035;&#20687;&#23376;&#27169;&#22359;&#19968;&#26679;&#21152;&#20837;&#21040;&#32858;&#21512;&#27169;&#22359;&#20013;&#12290;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">&#160;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">Maven&#21487;&#32487;&#25215;&#30340;POM
+&#20803;&#32032;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">groupId &#65306;&#39033;&#30446;&#32452; ID
+&#65292;&#39033;&#30446;&#22352;&#26631;&#30340;&#26680;&#24515;&#20803;&#32032;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">version
+&#65306;&#39033;&#30446;&#29256;&#26412;&#65292;&#39033;&#30446;&#22352;&#26631;&#30340;&#26680;&#24515;&#20803;&#32032;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">description
+&#65306;&#39033;&#30446;&#30340;&#25551;&#36848;&#20449;&#24687;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">organization
+&#65306;&#39033;&#30446;&#30340;&#32452;&#32455;&#20449;&#24687;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">inceptionYear
+&#65306;&#39033;&#30446;&#30340;&#21019;&#22987;&#24180;&#20221;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=" font-size:16pt">url
+&#65306;&#39033;&#30446;&#30340; url
+&#22320;&#22336;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">develoers
+&#65306;&#39033;&#30446;&#30340;&#24320;&#21457;&#32773;&#20449;&#24687;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">contributors
+&#65306;&#39033;&#30446;&#30340;&#36129;&#29486;&#32773;&#20449;&#24687;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">distributionManagerment
+&#65306;&#39033;&#30446;&#30340;&#37096;&#32626;&#20449;&#24687;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">issueManagement
+&#65306;&#32570;&#38519;&#36319;&#36394;&#31995;&#32479;&#20449;&#24687;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">ciManagement
+&#65306;&#39033;&#30446;&#30340;&#25345;&#32493;&#32487;&#25215;&#20449;&#24687;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=" font-size:16pt">scm
+&#65306;&#39033;&#30446;&#30340;&#29256;&#26412;&#25511;&#21046;&#20449;&#24687;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">mailingListserv
+&#65306;&#39033;&#30446;&#30340;&#37038;&#20214;&#21015;&#34920;&#20449;&#24687;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">properties
+&#65306;&#33258;&#23450;&#20041;&#30340; Maven
+&#23646;&#24615;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">dependencies
+&#65306;&#39033;&#30446;&#30340;&#20381;&#36182;&#37197;&#32622;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">dependencyManagement
+&#65306;&#37266;&#30446;&#30340;&#20381;&#36182;&#31649;&#29702;&#37197;&#32622;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">repositories
+&#65306;&#39033;&#30446;&#30340;&#20179;&#24211;&#37197;&#32622;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">build
+&#65306;&#21253;&#25324;&#39033;&#30446;&#30340;&#28304;&#30721;&#30446;&#24405;&#37197;&#32622;&#12289;&#36755;&#20986;&#30446;&#24405;&#37197;&#32622;&#12289;&#25554;&#20214;&#37197;&#32622;&#12289;&#25554;&#20214;&#31649;&#29702;&#37197;&#32622;&#31561;&#65307;</span></font></div>
+<div align="left"><font size="4"><span style=
+" font-size:16pt">reporting
+&#65306;&#21253;&#25324;&#39033;&#30446;&#30340;&#25253;&#21578;&#36755;&#20986;&#30446;&#24405;&#37197;&#32622;&#12289;&#25253;&#21578;&#25554;&#20214;&#37197;&#32622;&#31561;&#12290;</span></font></div></div>
+
+
+
+
+
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+<!--BEGIN PAGE BODY ITEM-->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <table>
+      <tr class="topicHeader">
+        <td class="topicImageColumn">
+
+        </td>
+        <td class="topicLineColumn">
+          <a name="主题31"></a>
+          <span class=outlineNumber></span><span class=topicLine>子模块继承父模块</span>
+          <span class="topicIcons">
+
+          </span>
+        </td>
+      </tr>
+    </table>
+
+
+     <div class="topicTextNotes"></div>
+
+
+
+
+
+<!--START RELATED-->
+<div class="relatedSection">
+<!--START ONE RELATED SECIONT -->
+<div class="oneRelatedSection">
+  <div class="relatedSectionHeader">See related topics and documents</div>
+  <div class="relatedSectionBody">
+      <!--BEGIN SNIPPET RELATIONSHIP LINKED CALLOUT PAGE HYPERLINK -->
+<div class="relatedItem">
+   <span class="relatedItemBullet">
+      <img src="Res/images/arrow.gif" alt="">
+   </span>
+   <a class="topicHyperlink"
+      href="无标题(5).html"
+      target="">通过一个父模块把所有子模块整合到一起</a>
+   <a class="topicHyperlink"
+      href="index(2).html"
+      target="">具有关联关系</a>
+</div>
+<!--END SNIPPET RELATIONSHIP LINKED CALLOUT PAGE HYPERLINK -->
+
+  </div>
+</div>
+<!--END ONE RELATED SECIONT-->
+
+
+</div>
+<!--END RELATED-->
+
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!--END PAGE BODY ITEM-->
+
+
+<!-- BEGIN TOP BUTTON -->
+<tr class="topic">
+  <td class="main" valign="top" colspan="2">
+    <div class="body">
+      <div class="topCommand">
+        <span class="commands">
+      <span class="command">
+            <img src="Res/images/top_button.gif" alt=""> 
+          <a href="javascript:scroll(0,0)">
+             <span class="label">Top</span>
+              </a>
+    </span>
+       </span>
+      </div>
+    </div>
+  </td>
+  <td class="right" valign="top">
+<!--right body column empty-->
+  </td>
+</tr>
+<!-- END TOP BUTTON -->
+
+</table>
+
+<!-- BEGIN SIDE NAVIGATION WRAPPER-->
+    </td>
+  </tr>
+</table> 
+<!-- END SIDE NAVIGATION WRAPPER-->
+
+<!-- END PAGE BODY-->
+
+<!---BEGIN FOOTER-->
+<table id="pageFooter">
+   <tr>
+      <!-- reserved for image <td class="left" rowspan="2"></td>-->
+      <td class="center" rowspan="2">
+         <div class="footerText">Your footer text</div>
+      </td>
+      <td class="right">
+         <div class="hyperlink">
+            <span>   
+               <a href="http://www.mindjet.com/" target="_blank">Powered By Mindjet MindManager</a>
+            </span>
+         </div>
+      </td>
+   </tr>
+   <tr>
+      <td class="right">
+         <div class="lastUpdated">
+            <span>Last updated:</span>
+            <span>2017/3/26</span>
+         </div>
+      </td>
+   </tr>
+   <tr>
+     <td></td>
+   </tr>
+</table>
+<!---END FOOTER-->
+
+
+</body>
+</html>
+
